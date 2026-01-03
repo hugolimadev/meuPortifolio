@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Lima | Desenvolvedor...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">Studio de Desenvolvimento.</a>
+            <div class="theme-toggle" id="theme-toggle" style="margin-right: 1rem; cursor: pointer; font-size: 1.2rem;">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Olá, eu sou Hugo Lima</span>
+                <h1 class="hero-title">Desenvolvedor <span>Full Stack</span></h1>
+                <p class="hero-description">
+                    Transformo ideias em experiências digitais incríveis.
+                    Especialista em construir aplicações web modernas, performáticas e escaláveis.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn">Ver Projetos</a>
+                    <a href="#contact" class="btn btn-secondary">Fale Comigo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container" style="padding: 100px 0;">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-grid">
+            <div class="about-img">
+                <!-- Using a placeholder image for now, user can replace -->
+                <img src="https://placehold.co/500x500/222/555?text=Profile" alt="Profile Picture"
+                    style="width: 100%; height: auto;">
+            </div>
+            <div class="about-text">
+                <h3>Desenvolvedor Apaixonado por Tecnologia</h3>
+                <p>
+                    Com vasta experiência em desenvolvimento web, foco em criar soluções que não apenas funcionam,
+                    mas encantam os usuários. Minha abordagem combina design moderno com código limpo e eficiente.
+                </p>
+                <p>
+                    Estou sempre aprendendo novas tecnologias e frameworks para me manter atualizado no mercado
+                    em constante evolução.
+                </p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h4>5+</h4>
+                        <p>Anos de Exp.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>10+</h4>
+                        <p>Projetos</p>
+                    </div>
+                </div>
+                <br>
+                <a href="#contact" class="btn">Baixar CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Preview Section -->
+    <section id="catalog-preview" class="container" style="padding: 50px 0; text-align: center;">
+        <div class="catalog-preview-content"
+            style="background: var(--card-bg); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+            <h2 class="section-title">O Que Você Encontra no Catálogo?</h2>
+            <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 2rem;">
+                Meu portfólio completo está organizado para facilitar sua busca.
+                Navegue por categorias específicas e encontre a solução ideal para o seu negócio.
+            </p>
+
+            <div class="category-preview-grid"
+                style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                <div class="cat-item">
+                    <i class="fas fa-desktop"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <p>Sites</p>
+                </div>
+                <div class="cat-item">
+                    <i class="fas fa-rocket"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <p>LP's</p>
+                </div>
+                <div class="cat-item">
+                    <i class="fas fa-shopping-cart"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <p>Lojas</p>
+                </div>
+                <div class="cat-item">
+                    <i class="fas fa-mobile-alt"
+                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <p>Apps</p>
+                </div>
+            </div>
+
+            <a href="catalogoProjetos.html" class="btn">Acessar Catálogo Completo</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container" style="padding: 50px 0 100px;">
+        <h2 class="section-title">Meus Projetos</h2>
+        <div class="projects-carousel">
+            <div class="projects-track">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Image placeholder -->
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JS</span>
+                        </div>
+                        <h3 class="project-title">E-commerce Dashboard</h3>
+                        <p class="project-desc">Um painel administrativo completo para gestão de vendas e estoque com
+                            gráficos interativos.</p>
+                        <div class="project-links">
+                            <a href="#" class="link-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="#" class="link-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Image placeholder -->
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                        </div>
+                        <h3 class="project-title">Task Manager App</h3>
+                        <p class="project-desc">Aplicação de produtividade com funcionalidades de drag-and-drop e
+                            colaboração em tempo real.</p>
+                        <div class="project-links">
+                            <a href="#" class="link-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="#" class="link-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Image placeholder -->
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">AI</span>
+                        </div>
+                        <h3 class="project-title">AI Image Generator</h3>
+                        <p class="project-desc">Integração com APIs de IA para gerar imagens baseadas em prompts de
+                            texto.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="link-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="#" class="link-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Duplicated for Infinite Scroll -->
+                <!-- Project 1 Copy -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Image placeholder -->
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JS</span>
+                        </div>
+                        <h3 class="project-title">E-commerce Dashboard</h3>
+                        <p class="project-desc">Um painel administrativo completo para gestão de vendas e estoque com
+                            gráficos interativos.</p>
+                        <div class="project-links">
+                            <a href="#" class="link-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="#" class="link-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 Copy -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Image placeholder -->
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                        </div>
+                        <h3 class="project-title">Task Manager App</h3>
+                        <p class="project-desc">Aplicação de produtividade com funcionalidades de drag-and-drop e
+                            colaboração em tempo real.</p>
+                        <div class="project-links">
+                            <a href="#" class="link-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="#" class="link-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 Copy -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Image placeholder -->
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">AI</span>
+                        </div>
+                        <h3 class="project-title">AI Image Generator</h3>
+                        <p class="project-desc">Integração com APIs de IA para gerar imagens baseadas em prompts de
+                            texto.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="link-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="#" class="link-btn"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="catalogoProjetos.html" class="btn btn-secondary">Ver Todos os Projetos</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container" style="padding: 50px 0;">
+        <h2 class="section-title">Minhas Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Front-end</h3>
+                <div class="skill-list">
+                    <span class="skill-item">HTML5</span>
+                    <span class="skill-item">CSS3</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">Angular</span>
+                    <span class="skill-item">React.js</span>
+                    <span class="skill-item">Vue.js</span>
+                    <span class="skill-item">Tailwind CSS</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> Back-end</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Java 8, 11, 17, 21</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Express</span>
+                    <span class="skill-item">Django</span>
+                    <span class="skill-item">SQL / NoSQL</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-tools"></i> Ferramentas</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Git / GitHub</span>
+                    <span class="skill-item">Jira</span>
+                    <span class="skill-item">Jenkins</span>
+                    <span class="skill-item">Postman</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">VS Code</span>
+                    <span class="skill-item">Figma</span>
+                    <span class="skill-item">Agile / Scrum</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container" style="padding: 100px 0;">
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Tem um projeto em mente?</h3>
+                <p>Estou sempre aberto a novas oportunidades e desafios. Entre em contato para discutirmos como posso
+                    ajudar no seu próximo projeto.</p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hugolima.hl04@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Belém, Pará, Brasil</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jose-hugo-baia-de-lima-ab67b9137/" target="_blank"
+                        rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/hugolimadev?tab=repositories" target="_blank" rel="noopener noreferrer"
+                        class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/hugolima.class/" target="_blank" rel="noopener noreferrer"
+                        class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-input" placeholder="Seu Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-input" placeholder="Seu E-mail" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-input" placeholder="Sua Mensagem" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Enviar
+                    Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Beltech Studio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | Hugo Lima</title>
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">Studio de Desenvolvimento.</a>
+            <div class="theme-toggle" id="theme-toggle" style="margin-right: 1rem; cursor: pointer; font-size: 1.2rem;">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">Início</a></li>
+                <li><a href="index.html#about">Sobre</a></li>
+                <li><a href="catalogoProjetos.html" class="active">Projetos</a></li>
+                <li><a href="index.html#skills">Habilidades</a></li>
+                <li><a href="index.html#contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Projects Catalog Section -->
+    <section class="container" style="padding: 150px 0 100px;">
+        <h2 class="section-title">Catálogo de Projetos</h2>
+        <p class="section-subtitle" style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+            Explore meu portfólio completo de soluções digitais.
+        </p>
+
+        <!-- Filters -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="landing">Landing Pages</button>
+            <button class="filter-btn" data-filter="site">Sites Institucionais</button>
+            <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            <button class="filter-btn" data-filter="blog">Blogs</button>
+            <button class="filter-btn" data-filter="app">Apps</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+            <!-- Projects will be rendered here by JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Beltech Studio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Project Image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div class="modal-tags" id="modal-tags">
+                        <!-- Tags rendered here -->
+                    </div>
+                    <p id="modal-desc">Description goes here.</p>
+                    <div class="modal-actions">
+                        <a href="#" id="modal-code" class="btn btn-secondary" target="_blank"><i
+                                class="fab fa-github"></i> Ver Código</a>
+                        <a href="#" id="modal-demo" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i>
+                            Ver Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
