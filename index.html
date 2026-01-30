@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hugo Lima | Desenvolvedor...</title>
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -15,7 +16,7 @@
     <header class="header">
         <div class="container nav">
             <a href="index.html" class="logo">Studio de Desenvolvimento.</a>
-            <div class="theme-toggle" id="theme-toggle" style="margin-right: 1rem; cursor: pointer; font-size: 1.2rem;">
+            <div class="theme-toggle" id="theme-toggle">
                 <i class="fas fa-moon"></i>
             </div>
             <div class="menu-toggle" id="menu-toggle">
@@ -53,13 +54,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="container" style="padding: 100px 0;">
+    <!-- About Section -->
+    <section id="about" class="container">
         <h2 class="section-title">Sobre Mim</h2>
         <div class="about-grid">
             <div class="about-img">
                 <!-- Using a placeholder image for now, user can replace -->
-                <img src="https://placehold.co/500x500/222/555?text=Profile" alt="Profile Picture"
-                    style="width: 100%; height: auto;">
+                <img src="https://placehold.co/500x500/222/555?text=Profile" alt="Profile Picture">
             </div>
             <div class="about-text">
                 <h3>Desenvolvedor Apaixonado por Tecnologia</h3>
@@ -88,35 +89,29 @@
     </section>
 
     <!-- Catalog Preview Section -->
-    <section id="catalog-preview" class="container" style="padding: 50px 0; text-align: center;">
-        <div class="catalog-preview-content"
-            style="background: var(--card-bg); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+    <section id="catalog-preview" class="container">
+        <div class="catalog-preview-content">
             <h2 class="section-title">O Que Você Encontra no Catálogo?</h2>
-            <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 2rem;">
+            <p class="catalog-preview-desc">
                 Meu portfólio completo está organizado para facilitar sua busca.
                 Navegue por categorias específicas e encontre a solução ideal para o seu negócio.
             </p>
 
-            <div class="category-preview-grid"
-                style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <div class="category-preview-grid">
                 <div class="cat-item">
-                    <i class="fas fa-desktop"
-                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <i class="fas fa-desktop"></i>
                     <p>Sites</p>
                 </div>
                 <div class="cat-item">
-                    <i class="fas fa-rocket"
-                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <i class="fas fa-rocket"></i>
                     <p>LP's</p>
                 </div>
                 <div class="cat-item">
-                    <i class="fas fa-shopping-cart"
-                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <i class="fas fa-shopping-cart"></i>
                     <p>Lojas</p>
                 </div>
                 <div class="cat-item">
-                    <i class="fas fa-mobile-alt"
-                        style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <i class="fas fa-mobile-alt"></i>
                     <p>Apps</p>
                 </div>
             </div>
@@ -126,7 +121,8 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container" style="padding: 50px 0 100px;">
+    <!-- Projects Section -->
+    <section id="projects" class="container">
         <h2 class="section-title">Meus Projetos</h2>
         <div class="projects-carousel">
             <div class="projects-track">
@@ -257,13 +253,13 @@
             </div>
         </div>
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
+        <div class="mt-2 text-center">
             <a href="catalogoProjetos.html" class="btn btn-secondary">Ver Todos os Projetos</a>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="container" style="padding: 50px 0;">
+    <section id="skills" class="container">
         <h2 class="section-title">Minhas Habilidades</h2>
         <div class="skills-grid">
             <div class="skill-category">
@@ -307,7 +303,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container" style="padding: 100px 0;">
+    <section id="contact" class="container">
         <h2 class="section-title">Vamos Conversar?</h2>
         <div class="contact-container">
             <div class="contact-info">
@@ -347,7 +343,7 @@
                 <div class="form-group">
                     <textarea name="message" class="form-input" placeholder="Sua Mensagem" required></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Enviar
+                <button type="submit" class="btn w-100 cursor-pointer" style="border: none;">Enviar
                     Mensagem</button>
             </form>
         </div>
@@ -359,6 +355,7 @@
             <p>&copy; 2026 Beltech Studio. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script src="projects-data.js"></script>
     <script src="script.js"></script>
 </body>
 
