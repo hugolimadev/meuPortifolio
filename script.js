@@ -34,21 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Mobile Menu Toggle
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
 
     // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
+            if (!navLinks || !menuToggle) return;
             navLinks.classList.remove('active');
             menuToggle.querySelector('i').classList.remove('fa-times');
             menuToggle.querySelector('i').classList.add('fa-bars');
@@ -79,10 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-desc');
     const modalTags = document.getElementById('modal-tags');
+    const modalCaseDetails = document.getElementById('modal-case-details');
     const modalCode = document.getElementById('modal-code');
     const modalDemo = document.getElementById('modal-demo');
 
     if (projectsGrid) {
+        function renderCaseList(title, items) {
+            if (!items || items.length === 0) return '';
+
+            return `
+                <div class="case-detail-group">
+                    <h3>${title}</h3>
+                    <ul>
+                        ${items.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
         function openModal(project) {
             if (!modal) return;
             modalImg.src = project.image;
@@ -91,8 +108,25 @@ document.addEventListener('DOMContentLoaded', () => {
             modalDesc.textContent = project.longDescription || project.description;
 
             modalTags.innerHTML = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
+            modalCaseDetails.innerHTML = `
+                ${project.objective ? `
+                    <div class="case-detail-group">
+                        <h3>Objetivo</h3>
+                        <p>${project.objective}</p>
+                    </div>
+                ` : ''}
+                ${renderCaseList('Entrega', project.deliverables)}
+                ${renderCaseList('Cuidados', project.highlights)}
+            `;
 
-            modalCode.href = project.links.code;
+            if (project.links.code) {
+                modalCode.href = project.links.code;
+                modalCode.style.display = 'inline-block';
+            } else {
+                modalCode.removeAttribute('href');
+                modalCode.style.display = 'none';
+            }
+
             modalDemo.href = project.links.demo;
 
             modal.style.display = 'flex';
@@ -120,12 +154,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+
         function renderProjects(filter = 'all') {
             projectsGrid.innerHTML = '';
 
             const filteredProjects = filter === 'all'
                 ? projectsData
                 : projectsData.filter(project => project.category === filter);
+
+            if (filteredProjects.length === 0) {
+                projectsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Mais projetos em breve</h3>
+                        <p>Este catálogo será preenchido apenas com trabalhos reais publicados. Enquanto isso, conheça o case do Frigorífico Bezerra na categoria Sites Institucionais.</p>
+                    </div>
+                `;
+                return;
+            }
 
             filteredProjects.forEach((project, index) => {
                 const projectCard = document.createElement('article');
@@ -134,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 projectCard.style.animationDelay = `${index * 50}ms`;
 
                 projectCard.innerHTML = `
-                    <div class="project-img" style="cursor: pointer;">
+                    <div class="project-img has-image" style="cursor: pointer;">
                          <img src="${project.image}" alt="${project.title}" style="width:100%; height:100%; object-fit:cover;">
                          <div class="img-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; opacity:0; transition:0.3s;">
                             <i class="fas fa-search-plus" style="color:white; font-size:2rem;"></i>
@@ -149,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="project-desc">${project.description}</p>
                         <div class="project-links">
                             <button class="link-btn open-modal-btn" style="background:none; border:none; cursor:pointer; font-family:inherit;"><i class="fas fa-eye"></i> Detalhes</button>
+                            <a class="link-btn" href="${project.links.demo}" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver site</a>
                         </div>
                     </div>
                 `;

@@ -1,6 +1,8 @@
 # Portfólio de Desenvolvedor - Hugo Lima
 
-Este projeto é um portfólio pessoal moderno e responsivo, desenvolvido para apresentar projetos, habilidades e informações de contato de forma profissional.
+Este projeto é um portfólio pessoal moderno e responsivo, desenvolvido para apresentar trabalhos reais, habilidades e informações de contato de forma profissional.
+
+Atualmente o catálogo começa com um case publicado: o site institucional do Frigorífico Bezerra.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -41,22 +43,26 @@ A organização do projeto é direta e modular:
 ├── catalog.css             # Estilos do Catálogo
 │                           # Extensão do style.css com regras específicas para Grid e Filtros.
 │
-├── script.js               # Lógica Principal
-│                           # Contém todos os dados dos projetos (projectsData) e funções do site.
+├── projects-data.js        # Dados dos projetos exibidos no catálogo.
+│
+├── script.js               # Lógica principal
+│                           # Contém filtros, tema, menu mobile e modal de detalhes.
+│
+├── assets/                 # Imagens e materiais visuais usados no site.
 │
 └── README.md               # Documentação do Projeto
 ```
 
 ## 🚀 Funcionalidades Chave
 
-1.  **Catálogo Dinâmico**: Os projetos não estão "chumbados" no HTML. Eles ficam numa lista no `script.js`. Para adicionar um novo, basta incluir um objeto na lista `projectsData`.
+1.  **Catálogo Dinâmico**: Os projetos não estão "chumbados" no HTML. Eles ficam numa lista no `projects-data.js`. Para adicionar um novo, basta incluir um objeto na lista `projectsData`.
 2.  **Tema Claro/Escuro**: O site salva a preferência do usuário.
 3.  **Filtros de Categoria**: Filtre projetos por "Sites", "Apps", "Landing Pages", etc.
 4.  **Modal de Detalhes**: Os visitantes podem ver mais informações sem recarregar a página.
 
 ## 📝 Como Adicionar Novo Projeto
 
-Abra o arquivo `script.js` e adicione um novo objeto ao array `projectsData`:
+Abra o arquivo `projects-data.js` e adicione um novo objeto ao array `projectsData`:
 
 ```javascript
 {
@@ -71,4 +77,4 @@ Abra o arquivo `script.js` e adicione um novo objeto ao array `projectsData`:
 ```
 
 ---
-© 2026 Beltech Studio. Todos os direitos reservados.
+© 2026 Hugo Lima. Todos os direitos reservados.

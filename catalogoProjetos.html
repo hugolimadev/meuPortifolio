@@ -15,7 +15,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container nav">
-            <a href="index.html" class="logo">Studio de Desenvolvimento.</a>
+            <a href="index.html" class="logo">Hugo Lima.dev</a>
             <div class="theme-toggle" id="theme-toggle">
                 <i class="fas fa-moon"></i>
             </div>
@@ -25,6 +25,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#home">Início</a></li>
                 <li><a href="index.html#about">Sobre</a></li>
+                <li><a href="index.html#services">Serviços</a></li>
                 <li><a href="catalogoProjetos.html" class="active">Projetos</a></li>
                 <li><a href="index.html#skills">Habilidades</a></li>
                 <li><a href="index.html#contact">Contato</a></li>
@@ -36,14 +37,15 @@
     <section class="container projects-page-section">
         <h2 class="section-title">Catálogo de Projetos</h2>
         <p class="section-subtitle">
-            Explore meu portfólio completo de soluções digitais...
+            Meu portfólio está começando com um case real publicado. Novos trabalhos serão adicionados aqui conforme
+            forem ao ar.
         </p>
 
         <!-- Filters -->
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="landing">Landing Pages</button>
             <button class="filter-btn" data-filter="site">Sites Institucionais</button>
+            <button class="filter-btn" data-filter="landing">Landing Pages</button>
             <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
             <button class="filter-btn" data-filter="blog">Blogs</button>
             <button class="filter-btn" data-filter="app">Apps</button>
@@ -58,14 +60,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Beltech Studio. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Hugo Lima. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <!-- Project Modal -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <button class="close-modal" type="button" aria-label="Fechar modal">&times;</button>
             <div class="modal-body">
                 <div class="modal-img-container">
                     <img id="modal-img" src="" alt="Project Image">
@@ -76,10 +78,16 @@
                         <!-- Tags rendered here -->
                     </div>
                     <p id="modal-desc">Description goes here.</p>
+                    <div id="modal-case-details" class="modal-case-details">
+                        <!-- Case details rendered here -->
+                    </div>
                     <div class="modal-actions">
-                        <a href="#" id="modal-code" class="btn btn-secondary" target="_blank"><i
+                        <a id="modal-code" class="btn btn-secondary" target="_blank"
+                            rel="noopener noreferrer"><i
                                 class="fab fa-github"></i> Ver Código</a>
-                        <a href="#" id="modal-demo" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i>
+                        <a href="https://www.frigorificobezerra.com.br/" id="modal-demo" class="btn" target="_blank"
+                            rel="noopener noreferrer"><i
+                                class="fas fa-external-link-alt"></i>
                             Ver Demo</a>
                     </div>
                 </div>

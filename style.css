@@ -117,6 +117,40 @@
     position: relative;
 }
 
+.profile-card {
+    min-height: 360px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.profile-card i {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border-radius: 18px;
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--accent-color);
+    font-size: 2rem;
+}
+
+.profile-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.profile-card p {
+    color: var(--text-secondary);
+}
+
 .about-img img {
     width: 100%;
     height: auto;
@@ -142,38 +176,79 @@
     gap: var(--spacing-md);
 }
 
-/* Projects Section (Carousel specific) */
+/* Projects Section */
 #projects {
     padding: 50px 0 100px;
 }
 
-.projects-carousel {
+.featured-project {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: var(--spacing-md);
     overflow: hidden;
+}
+
+.featured-project-img {
+    min-height: 360px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #111;
+}
+
+.featured-project-img img {
     width: 100%;
-    padding: var(--spacing-sm) 0;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
 }
 
-.projects-track {
-    display: flex;
-    gap: var(--spacing-md);
-    width: max-content;
-    animation: scroll 30s linear infinite;
+.featured-project-info .project-category {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-.projects-track:hover {
-    animation-play-state: paused;
+.featured-project-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
+.featured-project-info p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
 
-    100% {
-        transform: translateX(calc(-1 * (300px + 2rem) * 3));
-    }
+.case-points {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.case-points div {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.case-points strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.case-points span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 /* Shared Project Card Styles (Reused here and catalog, but kept here for homepage specific) */
@@ -209,6 +284,10 @@
     color: rgba(255, 255, 255, 0.1);
     font-size: 2rem;
     font-weight: 700;
+}
+
+.project-img.has-image::before {
+    display: none;
 }
 
 .project-info {
@@ -254,6 +333,54 @@
     align-items: center;
     gap: 0.5rem;
     transition: color var(--transition-fast);
+}
+
+/* Services Section */
+#services {
+    padding: 50px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--spacing-md);
+}
+
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 15px;
+    padding: var(--spacing-md);
+    min-height: 250px;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.service-card i {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    border-radius: 14px;
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--accent-color);
+    font-size: 1.35rem;
+}
+
+.service-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 /* Skills Section */
@@ -365,6 +492,29 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.contact-panel h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-panel p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-actions {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-actions .btn {
+    text-align: center;
+}
+
+.contact-actions .btn-secondary {
+    margin-left: 0;
+}
+
 .form-group {
     margin-bottom: 1rem;
 }
@@ -390,6 +540,12 @@ textarea.form-input {
     min-height: 120px;
 }
 
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
 
@@ -400,6 +556,28 @@ textarea.form-input {
 
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .featured-project {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-img,
+    .featured-project-img img {
+        min-height: 240px;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links .btn-secondary {
+        margin-left: 0;
+    }
+
+    .case-points,
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }
 
